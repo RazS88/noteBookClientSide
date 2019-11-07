@@ -1,0 +1,19 @@
+
+<div *ngIf="creating" class="example-container">
+    <mat-form-field>
+      <input [(ngModel)]= "contact.firstName" matInput placeholder="First name">
+    </mat-form-field>
+    <mat-form-field>
+        <input [(ngModel)]= "contact.lastName" matInput placeholder="Last name">
+      </mat-form-field>
+      <mat-form-field>
+          <input [(ngModel)]= "contact.adress" matInput placeholder="adress">
+        </mat-form-field>
+        <mat-form-field>
+            <input [(ngModel)]= "contact.email" matInput placeholder="email">
+          </mat-form-field>
+          <button mat-raised-button color="primary" (click)="create()">create</button>
+
+
+  </div>
+

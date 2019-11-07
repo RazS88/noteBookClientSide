@@ -1,0 +1,52 @@
+<table class="table">
+    <thead class="thead-dark">
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">First name</th>
+        <th scope="col">Last name</th>
+        <th scope="col">Adress</th>
+        <th scope="col">Email</th>
+        <th scope="col">Remove  </th>
+        <th scope="col"><button class="w3-button w3-circle w3-blue" (click)="updateBt()">edit</button>  </th>
+        <th scope="col"><button class="w3-button w3-circle w3-green" (click)="createBt()">new</button>  </th>
+
+      </tr>
+      <tr></tr>
+
+
+    </thead>
+    <tbody *ngIf ="contacts">
+<tr *ngFor = " let c of contacts">
+<td>{{c.id}}</td>
+<td>{{c.firstName}}</td>
+<td>{{c.lastName}}</td>
+<td>{{c.adress}}</td>
+<td>{{c.email}}</td>
+<td><button (click)="remove(c.id)">Delete</button></td>
+</tr>
+    </tbody>
+
+
+      <tr *ngIf ="create">
+        <td></td>
+      <td><input type="text" [(ngModel)]="newContact.firstName"></td>
+      <td><input type="text" [(ngModel)]="newContact.lastName"></td>
+      <td><input type="text" [(ngModel)]="newContact.email"></td>
+      <td><input type="text" [(ngModel)]="newContact.adress"></td>
+
+      <td><button (click)="edit()">Edit</button></td>
+      </tr>
+
+      <tr *ngIf ="update">
+          <td></td>
+        <td><input type="text" [(ngModel)]="newContact.firstName"></td>
+        <td><input type="text" [(ngModel)]="newContact.lastName"></td>
+        <td><input type="text" [(ngModel)]="newContact.email"></td>
+        <td><input type="text" [(ngModel)]="newContact.adress"></td>
+
+        <td><button (click)="edit()">Edit</button></td>
+        </tr>
+
+  </table>
+
+
